@@ -1,1 +1,1 @@
-**Motor-imagery-based-EEG-signal-processing***
+**Motor-imagery-based-EEG-signal-processing**
