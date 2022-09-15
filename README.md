@@ -3,7 +3,7 @@
 ***Objective:*** Detection (L) left hand, (R) right hand movement.
 
 ***Outline of the method:***
- - Load Data                                Data: BCI-competitionIV
+ - Load Data                                
  - Signal Preprocessing 
  - Feature Extraction 
  - Classification Model
