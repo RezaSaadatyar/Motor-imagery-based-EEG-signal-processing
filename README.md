@@ -7,7 +7,9 @@
  - Signal Preprocessing 
  - Feature Extraction 
  - Classification Model
+  
 
+***Machine Learning for Classification  [(Further information)](https://github.com/RezaSaadatyar/Machine-Learning-with-Python)***
 
 ![image](https://user-images.githubusercontent.com/96347878/190417118-64b4783e-dbd4-4924-836c-7388492ebfc4.png)
 
