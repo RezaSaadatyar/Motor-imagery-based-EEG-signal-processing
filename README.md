@@ -23,7 +23,17 @@ The fundamental idea behind motor imagery-based EEG signal processing is that wh
   - **Neurofeedback:** EEG-based neurofeedback allows individuals to learn how to modulate their brain activity. For motor imagery, participants can learn to increase or decrease specific frequency bands, potentially enhancing their motor imagery skills.
 
 
-
+[Dataset](https://www.bbci.de/competition/iv/desc_1.html)<br/>
+*Parameters of data:*
+ - *cnt:* the continuous EEG signals, size [time x channels]. The array is stored in datatype INT16. To convert it to uV values, use cnt= 0.1*double(cnt); in Matlab.<br/>
+ - *mrk:* structure of target cue information with fields (the file of evaluation data does not contain this variable).<br/>
+ - *pos:* vector of positions of the cue in the EEG signals given in unit sample, length #cues.<br/>
+ - *y:* vector of target classes (-1 for class one or 1 for class two), length #cues.<br/>
+ - *nfo:* structure providing additional information with fields.<br/>
+ - *fs:* sampling rate.<br/>
+ - *clab:* cell array of channel labels.<br/>
+ - *xpos:* x-position of electrodes in a 2d-projection.<br/>
+ - *ypos:* y-position of electrodes in a 2d-projection.<br/>
 
 
 
