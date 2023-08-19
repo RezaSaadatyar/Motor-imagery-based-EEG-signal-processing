@@ -30,11 +30,11 @@ The fundamental idea behind motor imagery-based EEG signal processing is that wh
   - *pos:* vector of positions of the cue in the EEG signals given in unit sample, length #cues.
   - *y:* vector of target classes (-1 for class one or 1 for class two), length #cues.
   - *nfo:* structure providing additional information with fields
-    - *fs:* sampling rate,
-    - *clab:* cell array of channel labels,
-    - classes:* cell array of the names of the motor imagery classes,
-    - xpos:* x-position of electrodes in a 2d-projection,
-    - ypos:* y-position of electrodes in a 2d-projection.
+    - *fs:* sampling rate
+    - *clab:* cell array of channel labels
+    - *classes:* cell array of the names of the motor imagery classes
+    - *xpos:* x-position of electrodes in a 2d-projection
+    - *ypos:* y-position of electrodes in a 2d-projection.
 
 
 
