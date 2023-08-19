@@ -27,14 +27,14 @@ The fundamental idea behind motor imagery-based EEG signal processing is that wh
 *Parameters of data:*
   - *cnt:* the continuous EEG signals, size [time x channels]. The array is stored in datatype INT16. To convert it to uV values, use cnt= 0.1*double(cnt); in Matlab.
   - *mrk:* structure of target cue information with fields (the file of evaluation data does not contain this variable).
-  - *pos:* vector of positions of the cue in the EEG signals given in unit sample, length #cues.
-  - *y:* vector of target classes (-1 for class one or 1 for class two), length #cues.
+     - *pos:* vector of positions of the cue in the EEG signals given in unit sample, length #cues.
+     - *y:* vector of target classes (-1 for class one or 1 for class two), length #cues.
   - *nfo:* structure providing additional information with fields
-    - *fs:* sampling rate
-    - *clab:* cell array of channel labels
-    - *classes:* cell array of the names of the motor imagery classes
-    - *xpos:* x-position of electrodes in a 2d-projection
-    - *ypos:* y-position of electrodes in a 2d-projection.
+     - *fs:* sampling rate
+     - *clab:* cell array of channel labels
+     - *classes:* cell array of the names of the motor imagery classes
+     - *xpos:* x-position of electrodes in a 2d-projection
+     - *ypos:* y-position of electrodes in a 2d-projection.
 
 
 
