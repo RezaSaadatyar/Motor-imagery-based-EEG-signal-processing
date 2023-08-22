@@ -22,12 +22,12 @@ The fundamental idea behind motor imagery-based EEG signal processing is that wh
   - **Model Training:** The classification model is trained using labeled data where the motor imagery tasks performed by the subject are known. The model learns to differentiate between different motor imagery classes based on the extracted features.
   - **Testing and Validation:** The trained model is tested on new, unseen EEG data to evaluate its performance in accurately classifying motor imagery tasks. *Cross-validation* techniques are often used to assess the model's generalization ability.
 ----
-**Spatial Filters:**<br>/Spatial filters are used to emphasize certain spatial patterns of neural activity while attenuating noise or unwanted signals. They are commonly used for source localization, noise reduction, feature extraction, and improving the spatial resolution of EEG signals. [Further information](https://github.com/RezaSaadatyar/EEG-Lab/tree/main) 
- - **Common Average Reference (CAR):** 
- - **Principal Component Analysis (PCA):** 
- - **Independent Component Analysis (ICA):** 
- - **Minimum Norm Estimation (MNE):** 
- - **Laplacian Filter**: 
+**Spatial Filters:**<br>/Spatial filters are used to emphasize certain spatial patterns of neural activity while attenuating noise or unwanted signals. They are commonly used for source localization, noise reduction, feature extraction, and improving the spatial resolution of EEG signals. **[Further information](https://github.com/RezaSaadatyar/EEG-Lab/tree/main)** 
+ - **Common Average Reference (CAR)** 
+ - **Principal Component Analysis (PCA)** 
+ - **Independent Component Analysis (ICA)** 
+ - **Minimum Norm Estimation (MNE)** 
+ - **Laplacian Filter** 
 ----
 
 
