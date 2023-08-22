@@ -22,6 +22,15 @@ The fundamental idea behind motor imagery-based EEG signal processing is that wh
   - **Model Training:** The classification model is trained using labeled data where the motor imagery tasks performed by the subject are known. The model learns to differentiate between different motor imagery classes based on the extracted features.
   - **Testing and Validation:** The trained model is tested on new, unseen EEG data to evaluate its performance in accurately classifying motor imagery tasks. *Cross-validation* techniques are often used to assess the model's generalization ability.
 ----
+**Spatial Filters:**<br>/Spatial filters are used to emphasize certain spatial patterns of neural activity while attenuating noise or unwanted signals. They are commonly used for source localization, noise reduction, feature extraction, and improving the spatial resolution of EEG signals. <br/>
+ - **Common Average Reference (CAR):** The CAR spatial filter calculates the average of all electrode signals and subtracts this average from each electrode's signal. This helps remove common noise sources shared across all electrodes, such as environmental interference.
+ - **Principal Component Analysis (PCA):** PCA is a dimensionality reduction technique that transforms the original EEG data into a set of uncorrelated components, ordered by their variance. The first few principal components can capture the most prominent spatial patterns in the data.
+ - **Independent Component Analysis (ICA):** ICA aims to separate the EEG data into statistically independent components that correspond to different underlying sources. It's especially useful for separating EEG signals into neural sources and various artifacts.
+ - **Minimum Norm Estimation (MNE):** MNE is used for source localization, aiming to estimate the distribution of neural activity on the cortical surface based on EEG data. It takes into account the spatial information provided by the EEG electrode montage.
+ - **Laplacian Filter**: It is a technique used in EEG signal processing to enhance the spatial resolution of EEG data and highlight localized activity while reducing the influence of distant sources. It's a spatial filter that emphasizes changes in voltage between neighboring electrodes.
+
+
+
 
 **[Dataset](https://www.bbci.de/competition/iv/desc_1.html)**<br/>
 **Parameters of data:**
