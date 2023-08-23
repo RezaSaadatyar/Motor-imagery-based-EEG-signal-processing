@@ -45,7 +45,7 @@ Data_Filter = filtering(Data, f_low=8, f_high=30, order=3, fs=100, btype='bandpa
 # ---------------------------------------------- Step 2.2: Data scaling ------------------------------------------------
 # Data = normalize_data(Data, Type_Normalize='MinMaxScaler', Display_Figure='on')   # Type_Normalize:'MinMaxScaler', 'normalize'
 # =============================== Step 3: Source localization using special filters ====================================
-Type_Filter = "CAR"     # 'CAR', 'LL', 'HL'
+Type_Filter = "HL"     # 'CAR', 'LL', 'HL'
 Display_Figure = "On"   # "On" , "Off"
 Data_Filter = spatial_filter(Data_Filter, Position_XY, Fs, Type_Filter, Name_channel, Display_Figure)
 # ============== Step 4: Separate trials: Number Samples each trial*number channel*number trial for SCP ================
