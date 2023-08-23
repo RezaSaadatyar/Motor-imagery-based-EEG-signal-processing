@@ -5,6 +5,7 @@
 # ============================  2022-2023 ==================================
 # The program will run automatically when you run code/file Main.py, and you do not need to run any of the other codes.
 # ================================================== Import Libraries ==================================================
+import os
 import numpy as np
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
@@ -18,7 +19,15 @@ from Classification import classification
 from Output_Training_Test_Network import output_network
 # ============================================Step 1: Preparing the data ===============================================
 # ----------------------------------------- Step 1.1: Load data & Time_trial -------------------------------------------
-data_set = loadmat('BCICIV_calib_ds1a_100Hz.mat')
+folder_name = 'Data'
+# Get Files within folder_name
+files = os.listdir(f"{os.getcwd()}\\{folder_name}")
+for ind, val in enumerate(files):
+    print(f"ind: {ind} ----> data name: {val} ")
+
+ind = 0
+data_set = loadmat(os.path.join(folder_name, files[ind]))
+
 Key = data_set.keys()
 Data = np.double(data_set['cnt']) * 0.1
 N = Data.shape[1]
@@ -31,7 +40,8 @@ Mrk = data_set['mrk']
 Time_Trial = np.array(Mrk['pos'].tolist()).flatten()
 # -------------------------------------------- Step 1.2: position_classes ----------------------------------------------
 Name_class = Nfo['classes']
-Name_channel = list(np.concatenate(list(np.array(Nfo['clab'].tolist()).flatten())))
+Name_channel = list(np.concatenate(
+    list(np.array(Nfo['clab'].tolist()).flatten())))
 
 X_position = list(np.array(Nfo['xpos'].tolist()).flatten())
 Y_position = list(np.array(Nfo['ypos'].tolist()).flatten())
@@ -41,14 +51,19 @@ Labels = np.array(Mrk['y'].tolist()).flatten()
 Data, Labels = preparing_data(Data, Labels)
 # ======================================== Step 2: Filtering & Data scaling ============================================
 # ---------------------------- Step 2.1: Band pass filtering to get beta and mu band information -----------------------
-Data_Filter = filtering(Data, f_low=8, f_high=30, order=3, fs=100, btype='bandpass')      # btype:'low', 'high', 'bandpass', 'bandstop'
+# btype:'low', 'high', 'bandpass', 'bandstop'
+Data_Filter = filtering(Data, f_low=8, f_high=30,
+                        order=3, fs=100, btype='bandpass')
 # ---------------------------------------------- Step 2.2: Data scaling ------------------------------------------------
 # Data = normalize_data(Data, Type_Normalize='MinMaxScaler', Display_Figure='on')   # Type_Normalize:'MinMaxScaler', 'normalize'
 # =============================== Step 3: Source localization using special filters ====================================
 Type_Filter = "HL"     # 'CAR', 'LL', 'HL'
 Display_Figure = "On"   # "On" , "Off"
-Data_Filter = spatial_filter(Data_Filter, Position_XY, Fs, Type_Filter, Name_channel, Display_Figure)
+Data_Filter = spatial_filter(
+    Data_Filter, Position_XY, Fs, Type_Filter, Name_channel, Display_Figure)
+plt.show()
 # ============== Step 4: Separate trials: Number Samples each trial*number channel*number trial for SCP ================
+"""
 Ltr = 4 * Fs
 Data1 = np.zeros((Ltr, N, 100))
 Data2 = np.zeros((Ltr, N, 100))
@@ -100,6 +115,7 @@ Labels = np.concatenate((Label1, Label2), axis=0)
 model, type_class = classification(Data, Labels, type_class='NB', hidden_layer_mlp=(10,), max_iter=200, kernel_svm='rbf',
     c_svm=10, gamma_svm=0.7, max_depth=5, criterion_dt='entropy', n_estimators=500)
 Accuracy_Train, Cr_Train, Accuracy_Test, Cr_Test = output_network(Data, Labels, model, type_class, k_fold=5)
+"""
 """
 type_class: 'KNN', 'LR', 'MLP', 'SVM', 'DT', 'NB', 'RF', 'AdaBoost', 'XGBoost', 'LDA'
 LR: LogisticRegression; MLP: Multilayer perceptron, SVM:Support Vector Machine; DT: Decision Tree; NB: Naive Bayes;
