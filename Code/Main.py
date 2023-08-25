@@ -63,7 +63,6 @@ Data_Filter = spatial_filter(
     Data_Filter, Position_XY, Fs, Type_Filter, Name_channel, Display_Figure)
 plt.show()
 # ============== Step 4: Separate trials: Number Samples each trial*number channel*number trial for SCP ================
-"""
 Ltr = 4 * Fs
 Data1 = np.zeros((Ltr, N, 100))
 Data2 = np.zeros((Ltr, N, 100))
