@@ -30,3 +30,6 @@ def common_spatial_pattern(data_train1, data_train2, m):
     Eig_vectors = Eig_vectors[:, Ind]
     W = np.concatenate((Eig_vectors[:, 0:m], Eig_vectors[:, len(Eig_vectors)-m:len(Eig_vectors)]), axis=1)
     return W
+
+
+
